@@ -1,5 +1,5 @@
 ### Credits
-This repositoty is based on [Stephen Grider](https://github.com/StephenGrider)'s "[tasky](https://github.com/StephenGrider/ElectronCode/tree/master/boilerplates/tasky)" boilerplate.
+This repository is based on [Stephen Grider](https://github.com/StephenGrider)'s "[tasky](https://github.com/StephenGrider/ElectronCode/tree/master/boilerplates/tasky)" boilerplate.
 
 ### Getting started
 
