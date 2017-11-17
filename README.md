@@ -1,3 +1,6 @@
+### Credits
+This repositoty is based on Stephen Grider's ElectronCode 'tasky' boilerplate.
+
 ### Getting started
 
 `npm install`
