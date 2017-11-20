@@ -1,14 +1,15 @@
 const electron = require('electron');
 const path = require('path');
-const { Tray } = electron;
+const { app, Tray, Menu } = electron;
 
 class TimerTray extends Tray {
     constructor(iconPath, window) {
         super(iconPath);
-        
+
         this.window = window;
         this.setToolTip('Tasky!');
         this.on('click', this.onClick.bind(this));
+        this.on('right-click', this.onRightClick.bind(this))
     }
 
     getIconPath() {
@@ -23,7 +24,6 @@ class TimerTray extends Tray {
         if (this.window.isVisible()) {
             this.window.hide();
         } else {
-
             const yPosition = process.platform === 'darwin' ? y : y - height;
             this.window.setBounds({
                 x: Math.floor(x - width / 2),
@@ -33,6 +33,15 @@ class TimerTray extends Tray {
             });
             this.window.show();
         }
+    }
+
+    onRightClick() {
+        const menuConfig = Menu.buildFromTemplate([{
+            label: 'Quit',
+            click: () => { app.quit(); }
+        }]);
+
+        this.popUpContextMenu(menuConfig);
     }
 }
 
