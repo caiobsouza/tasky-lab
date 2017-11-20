@@ -1,5 +1,7 @@
 const electron = require('electron');
 const path = require('path');
+
+
 const { app, Tray, Menu } = electron;
 
 class TimerTray extends Tray {

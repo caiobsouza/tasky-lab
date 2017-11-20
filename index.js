@@ -2,7 +2,8 @@ const path = require('path');
 const electron = require('electron');
 const TimerTray = require('./app/timer-tray');
 const MainWindow = require('./app/main-window');
-const { app, Tray } = electron;
+
+const { app, ipcMain } = electron;
 /**
  * @type {BrowserWindow}
  */
@@ -26,4 +27,8 @@ app.on('ready', () => {
 
     mainWindow = new MainWindow(`file://${__dirname}/src/index.html`);
     configureTray();
+});
+
+ipcMain.on('update-timer', (event, timeLeft) => {
+    tray.setTitle(timeLeft);
 });
