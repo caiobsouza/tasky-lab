@@ -2,7 +2,7 @@ const electron = require('electron');
 const { app, BrowserWindow } = electron;
 
 class MainWindow extends BrowserWindow {
-    constructor() {
+    constructor(path) {
         super({
             height: 500,
             width: 250,
@@ -12,7 +12,7 @@ class MainWindow extends BrowserWindow {
             skipTaskbar: true
         });
 
-        this.loadURL(`file://${__dirname}/../src/index.html`);
+        this.loadURL(path);
         this.on('blur', this.onBlur.bind(this));
     }
 

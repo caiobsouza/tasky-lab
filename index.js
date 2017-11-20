@@ -24,6 +24,6 @@ app.on('ready', () => {
     if (process.platform === 'darwin')
         app.dock.hide();
 
-    mainWindow = new MainWindow();
+    mainWindow = new MainWindow(`file://${__dirname}/src/index.html`);
     configureTray();
 });
